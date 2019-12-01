@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Models;
-
-namespace Interfaces.IFilterModels
+﻿using Entities;
+namespace Models.IFilterModels
 {
-    public interface IUserFilter : IFilterModel<User>
+    public interface IUserFilter : IFilterModel<Entities.User>
     {
     }
 }

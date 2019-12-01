@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestRootAPI", "BestRootAPI\BestRootAPI.csproj", "{C04A0429-C606-4D1B-8DB3-D54093A7756B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestRootAPI", "BestRootAPI\BestRootAPI.csproj", "{C04A0429-C606-4D1B-8DB3-D54093A7756B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{2E326A8E-2379-4E91-8BF3-CB7A4A0574A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{2E326A8E-2379-4E91-8BF3-CB7A4A0574A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{48934926-5B4B-49D9-8B89-15350DA001E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{48934926-5B4B-49D9-8B89-15350DA001E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{F36162DD-AC90-4850-86B9-D8FE0F046BBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{F36162DD-AC90-4850-86B9-D8FE0F046BBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{54AFBBA8-FB17-432A-B5BE-CCCD839BC469}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{54AFBBA8-FB17-432A-B5BE-CCCD839BC469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{3CD87A53-279C-4134-AF3A-F68B6DD78C60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{54AFBBA8-FB17-432A-B5BE-CCCD839BC469}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54AFBBA8-FB17-432A-B5BE-CCCD839BC469}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54AFBBA8-FB17-432A-B5BE-CCCD839BC469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD87A53-279C-4134-AF3A-F68B6DD78C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD87A53-279C-4134-AF3A-F68B6DD78C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD87A53-279C-4134-AF3A-F68B6DD78C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD87A53-279C-4134-AF3A-F68B6DD78C60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

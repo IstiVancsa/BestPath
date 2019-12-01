@@ -1,89 +1,79 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
+using Entities;
 using Interfaces;
-using Models;
+
 
 namespace Repositories
 {
-    public class GenericRepository<TContext, TModel> : IGenericRepository<TModel>
-         where TModel : BaseModel, new()
-         where TContext : BaseDataContext<TModel>, new()
-    { 
-        public void AddItem(TModel item)
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity>
+         where TEntity : BaseEntity, new()
+    {
+        private BaseDataContext DatabaseContext { get; set; }
+
+        public GenericRepository(BaseDataContext databaseContext)
         {
-            using (var ctx = new TContext())
-            {
-                ctx.Items.Add(item);
-                ctx.SaveChanges();
-            }
+            this.DatabaseContext = databaseContext;
+        }
+        public void AddItem(TEntity item)
+        {
+            DatabaseContext.DbContext.Set<TEntity>().Add(item);
+            SaveChanges();
         }
 
-        public IQueryable<TModel> GetItems()
+        public IQueryable<TEntity> GetItems()
         {
-            IQueryable<TModel> items;
-
-            using (var ctx = new TContext())
-            {
-                items = ctx.Items.Where(s => true)
-                                        .OrderBy(x => x.Id);
-            }
+            IQueryable<TEntity> items;
+            items = DatabaseContext.DbContext.Set<TEntity>().Where(s => true)
+                .OrderBy(x => x.Id);
 
             return items;
         }
 
-        public IQueryable<TModel> GetItems(Expression<Func<TModel, bool>> predicate)
+        public IQueryable<TEntity> GetItems(Expression<Func<TEntity, bool>> predicate)
         {
-            IQueryable<TModel> items;
+            IQueryable<TEntity> items;
 
-            using (var ctx = new TContext())
-            {
-                items = ctx.Items.Where(predicate)
-                    .OrderBy(x => x.Id);
-            }
+            items = DatabaseContext.DbContext.Set<TEntity>().Where(predicate)
+                .OrderBy(x => x.Id);
+
 
             return items;
         }
 
-        public TModel GetItem(Expression<Func<TModel, bool>> predicate)
+        public TEntity GetItem(Expression<Func<TEntity, bool>> predicate)
         {
-            TModel myItems;
+            TEntity myItem;
 
-            using (var ctx = new TContext())
-            {
-                myItems = ctx.Items.Where(predicate)
-                    .FirstOrDefault();
-            }
+            myItem = DatabaseContext.DbContext.Set<TEntity>().Where(predicate)
+                .FirstOrDefault();
 
-            return myItems;
+
+            return myItem;
         }
 
-        public void UpdateItem(TModel myProduct)
+        public void UpdateItem(TEntity myProduct)
         {
-            using (var ctx = new TContext())
-            {
-                ctx.Update(myProduct);
-                ctx.SaveChanges();
-            }
+            DatabaseContext.DbContext.Set<TEntity>().Update(myProduct);
+            SaveChanges();
         }
 
-        public void DeleteItem(TModel myProduct)
+        public void DeleteItem(TEntity entity)
         {
-            using (var ctx = new TContext())
-            {
-                ctx.Remove(myProduct);
-                ctx.SaveChanges();
-            }
+            DatabaseContext.DbContext.Set<TEntity>().Remove(entity);
+            SaveChanges();
         }
 
         public void DeleteItem(Guid id)
         {
-            using (var ctx = new TContext())
-            {
-                ctx.Remove(ctx.Items.Where(x => x.Id == id));
-                ctx.SaveChanges();
-            }
+            TEntity myEntity = DatabaseContext.DbContext.Set<TEntity>().FirstOrDefault(x => x.Id == id);
+            if(myEntity != null)
+                DatabaseContext.DbContext.Set<TEntity>().Remove(myEntity);
+            SaveChanges();
         }
+
+        public int SaveChanges() { return DatabaseContext.DbContext.SaveChanges(); }
 
     }
 }

@@ -11,3 +11,5 @@ D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Interfaces\obj\Debug\netcoreapp3.0\Inte
 D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Interfaces\obj\Debug\netcoreapp3.0\Interfaces.csproj.CopyComplete
 D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Interfaces\obj\Debug\netcoreapp3.0\Interfaces.dll
 D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Interfaces\obj\Debug\netcoreapp3.0\Interfaces.pdb
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Interfaces\bin\Debug\netcoreapp3.0\Entities.dll
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Interfaces\bin\Debug\netcoreapp3.0\Entities.pdb

@@ -5,7 +5,7 @@ using Models;
 
 namespace Interfaces
 {
-    public interface IReviewRepository:IGenericRepository<Review>
+    public interface IReviewRepository:IGenericRepository<Entities.Review>
     {
     }
 }

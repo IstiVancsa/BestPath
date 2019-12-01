@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
-using Models;
+using Entities;
 
-namespace Interfaces.IFilterModels
+namespace Models.IFilterModels
 {
-    public interface IFilterModel<TModel>
-        where TModel : BaseModel, new()
+    public interface IFilterModel<TEntity>
+        where TEntity : BaseEntity, new()
     {
-        Expression<Func<TModel, bool>> GetFilter();
+        Expression<Func<TEntity, bool>> GetFilter();
     }
 }

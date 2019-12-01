@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using Entities;
 using Models;
 using Utils;
 
 namespace Interfaces
 {
-    public interface IGenericRepository<TModel>
-        where TModel : BaseModel, new()
+    public interface IGenericRepository<TEntity>
+        where TEntity : BaseEntity, new()
     {
 
-        void AddItem(TModel product);
-        IQueryable<TModel> GetItems();
+        void AddItem(TEntity product);
+        IQueryable<TEntity> GetItems();
 
-        IQueryable<TModel> GetItems(Expression<Func<TModel, bool>> predicate);
+        IQueryable<TEntity> GetItems(Expression<Func<TEntity, bool>> predicate);
 
-        TModel GetItem(Expression<Func<TModel, bool>> predicate);
+        TEntity GetItem(Expression<Func<TEntity, bool>> predicate);
 
-        void UpdateItem(TModel myProduct);
+        void UpdateItem(TEntity myProduct);
 
-        void DeleteItem(TModel myProduct);
+        void DeleteItem(TEntity myProduct);
 
         void DeleteItem(Guid id);
 

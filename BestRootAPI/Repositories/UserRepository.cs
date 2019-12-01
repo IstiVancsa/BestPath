@@ -6,7 +6,11 @@ using Models;
 
 namespace Repositories
 {
-    public class UserRepository : GenericRepository<UserDataContext, User>, IUserRepository
+    public class UserRepository : GenericRepository<Entities.User>, IUserRepository
     {
+        public UserRepository(BaseDataContext databaseContext) : base(databaseContext)
+        {
+            
+        }
     }
 }

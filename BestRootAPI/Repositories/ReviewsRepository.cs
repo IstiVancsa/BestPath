@@ -3,7 +3,11 @@ using Models;
 
 namespace Repositories
 {
-    public class ReviewsRepository : GenericRepository<ReviewDataContext,Review>, IReviewRepository
+    public class ReviewsRepository : GenericRepository<Entities.Review>, IReviewRepository
     {
+        public ReviewsRepository(BaseDataContext databaseContext) : base(databaseContext)
+        {
+            
+        }
     }
 }

@@ -2,51 +2,53 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Net.Http;
-using System.Web;
 using System.Web.Http;
-using System.Web.Http.Controllers;
+using Entities;
 using Interfaces;
-using Interfaces.IFilterModels;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
+using Models.IFilterModels;
 
 namespace BestRootAPI.Controllers
 {
-    //[KeyAPIAuthorize] TODO to be activated when finished to implemed KeyApiAuthorize
-    public class BaseApiController<TModel, TRepository, TFilterModel> : ControllerBase
+    //[KeyAPIAuthorize] TODO to be activated when finished to implement KeyApiAuthorize
+    [ApiController]
+    [Microsoft.AspNetCore.Mvc.Route("[controller]")]
+    public class BaseApiController<TModel, TEntity, TRepository, TFilterModel> : ControllerBase
         where TModel : BaseModel, new()
-        where TRepository : class, IGenericRepository<TModel>
-        where TFilterModel : class, IFilterModel<TModel>
+        where TEntity : BaseEntity, new()
+        where TRepository : class, IGenericRepository<TEntity>
+        where TFilterModel : class, IFilterModel<TEntity>
     {
         //public int LoggedUserId => Convert.ToInt32(System.Web.HttpContext.Current.Session["EmployeeId"].ToString()); TODO same goes here
-        public Expression<Func<TModel, TModel>> GetByFilterSelector = null;
-        public TRepository EntityRepository { get; }
+        public Expression<Func<TEntity, TModel>> GetByFilterSelector = null;
 
-        public BaseApiController(TRepository entityRepository)
+        public TRepository GenericRepository { get; }
+
+        public BaseApiController(TRepository genericRepository)
         {
-            EntityRepository = entityRepository;
+            GenericRepository = genericRepository;
         }
 
-        [System.Web.Http.Route("GetDefault")]
-        public IEnumerable<TModel> GetDefault()
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("GetDefault")]
+        public IActionResult GetDefault()
         {
-            return EntityRepository.GetItems(q => true).ToList();
+            return new JsonResult(GenericRepository.GetItems(q => true).ToList());
         }
 
-        [System.Web.Mvc.HttpGet]
-        [System.Web.Http.Route("GetByFilter")]
-        public virtual IEnumerable<TModel> GetByFilter([FromUri]TFilterModel filter)
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("GetByFilter")]
+        public IActionResult GetByFilter([Microsoft.AspNetCore.Mvc.FromBody]TFilterModel filter)
         {
-            Expression<Func<TModel, bool>> predicate = x => true;
+            Expression<Func<TEntity, bool>> predicate = x => true;
             if (filter != null)
                 predicate = filter.GetFilter();
 
-            return EntityRepository
+            return new JsonResult(GenericRepository
                         .GetItems(predicate)
                         .Select(GetByFilterSelector)
-                        .ToList();
+                        .ToList());
         }
     }
 

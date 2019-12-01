@@ -13,3 +13,7 @@ D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\In
 D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Models.pdb
 D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Utils.pdb
 D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Repositories\obj\Debug\netcoreapp3.0\Repositories.csproj.CopyComplete
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Entities.dll
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Entities.pdb
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Repositories.runtimeconfig.json
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Repositories.runtimeconfig.dev.json

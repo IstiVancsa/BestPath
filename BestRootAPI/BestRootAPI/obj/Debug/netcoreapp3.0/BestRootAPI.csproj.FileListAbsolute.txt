@@ -147,3 +147,5 @@ D:\Info\Anul3\dotNet\Proiect\BestRootAPI\BestRootAPI\bin\Debug\netcoreapp3.0\Mic
 D:\Info\Anul3\dotNet\Proiect\BestRootAPI\BestRootAPI\bin\Debug\netcoreapp3.0\Autofac.Integration.WebApi.dll
 D:\Info\Anul3\dotNet\Proiect\BestRootAPI\BestRootAPI\bin\Debug\netcoreapp3.0\System.Web.Http.WebHost.dll
 D:\Info\Anul3\dotNet\Proiect\BestRootAPI\BestRootAPI\obj\Debug\netcoreapp3.0\BestRootAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\BestRootAPI\bin\Debug\netcoreapp3.0\Entities.dll
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\BestRootAPI\bin\Debug\netcoreapp3.0\Entities.pdb

@@ -1,0 +1,7 @@
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Entities\bin\Debug\netcoreapp3.0\Entities.deps.json
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Entities\bin\Debug\netcoreapp3.0\Entities.dll
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Entities\bin\Debug\netcoreapp3.0\Entities.pdb
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Entities\obj\Debug\netcoreapp3.0\Entities.AssemblyInfoInputs.cache
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Entities\obj\Debug\netcoreapp3.0\Entities.AssemblyInfo.cs
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Entities\obj\Debug\netcoreapp3.0\Entities.dll
+D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Entities\obj\Debug\netcoreapp3.0\Entities.pdb
