@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Models;
-
-namespace Interfaces.IFilterModels
+﻿namespace Models.IFilterModels
 {
-    public interface IReviewFilter : IFilterModel<Review>
+    public interface IReviewFilter : IFilterModel<Entities.Review>
     {
     }
 }

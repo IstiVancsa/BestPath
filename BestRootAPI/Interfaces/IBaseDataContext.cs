@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Text;
-using Models;
+﻿using Entities;
+using Microsoft.EntityFrameworkCore;
+using DbContext = Microsoft.EntityFrameworkCore.DbContext;
 
 namespace Interfaces
 {
-    public interface IBaseDataContext<TModel>
-    where TModel: BaseModel, new()
+    public interface IBaseDataContext
     {
-        IDbSet<TModel> Items { get; set; }
+        DbContext DbContext { get; }
 
+        DbSet<User> Users { get; set; }
+        DbSet<Review> Reviews { get; set; }
     }
 }

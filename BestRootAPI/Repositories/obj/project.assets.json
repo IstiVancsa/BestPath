@@ -99,6 +99,22 @@
           "lib/netstandard1.3/_._": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.Design/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.6.0",
+          "Microsoft.EntityFrameworkCore.Relational": "3.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {}
+        },
+        "build": {
+          "build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/3.0.1": {
         "type": "package",
         "dependencies": {
@@ -122,6 +138,18 @@
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "3.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/_._": {}
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/3.0.1": {
@@ -1341,10 +1369,21 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
+      },
       "Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
+          "Entities": "1.0.0",
           "EntityFramework": "6.3.0",
           "Microsoft.EntityFrameworkCore": "3.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.1",
@@ -1363,6 +1402,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
+          "Entities": "1.0.0",
           "EntityFramework": "6.3.0",
           "Microsoft.EntityFrameworkCore": "3.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.1",
@@ -1600,6 +1640,22 @@
         "packageIcon.png"
       ]
     },
+    "Microsoft.EntityFrameworkCore.Design/3.0.1": {
+      "sha512": "LLFnlQEfRjdfpE5LJ0hW9n9pfEsIu8IzSatij59wSjYCkBnz3nQKNX5oSGJ8R5MuhdFWG01VCLnppUs/rUeclA==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.design/3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net461/Microsoft.EntityFrameworkCore.Design.props",
+        "build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.xml",
+        "microsoft.entityframeworkcore.design.3.0.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "Microsoft.EntityFrameworkCore.Relational/3.0.1": {
       "sha512": "1+BXTwfzodjVJxJHwNfom5xtoR8OcwQ6pwEzannpnEsb7mh8ZpHU3wE4phtsHOc15h/FVog2C6bnKnNr7VGTnA==",
       "type": "package",
@@ -1626,6 +1682,30 @@
         "microsoft.entityframeworkcore.sqlserver.3.0.1.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Tools/3.0.1": {
+      "sha512": "kDv5L/GaXWZVayLjgDRdPEORmUEa1n11dAM3rCod6MpBCJbz4/VJGdOUwjw24GGCCCmRdamVb/5pujz93fAGww==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.tools/3.0.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.1/_._",
+        "microsoft.entityframeworkcore.tools.3.0.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.nuspec",
+        "packageIcon.png",
+        "tools/EntityFrameworkCore.PS2.psd1",
+        "tools/EntityFrameworkCore.PS2.psm1",
+        "tools/EntityFrameworkCore.psd1",
+        "tools/EntityFrameworkCore.psm1",
+        "tools/about_EntityFrameworkCore.help.txt",
+        "tools/init.ps1",
+        "tools/net461/any/ef.exe",
+        "tools/net461/win-x86/ef.exe",
+        "tools/netcoreapp2.0/any/ef.dll",
+        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/3.0.1": {
@@ -5262,6 +5342,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
+    },
     "Interfaces/1.0.0": {
       "type": "project",
       "path": "../Interfaces/Interfaces.csproj",
@@ -5280,10 +5365,13 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
+      "Entities >= 1.0.0",
       "EntityFramework >= 6.3.0",
       "Interfaces >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.0.1",
+      "Microsoft.EntityFrameworkCore.Design >= 3.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.1",
+      "Microsoft.EntityFrameworkCore.Tools >= 3.0.1",
       "Microsoft.Extensions.Configuration >= 3.0.1"
     ]
   },
@@ -5317,6 +5405,9 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
+            "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj"
+            },
             "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Interfaces\\Interfaces.csproj": {
               "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Interfaces\\Interfaces.csproj"
             }
@@ -5340,7 +5431,19 @@
             "target": "Package",
             "version": "[3.0.1, )"
           },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.0.1, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[3.0.1, )"
+          },
+          "Microsoft.EntityFrameworkCore.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[3.0.1, )"
           },

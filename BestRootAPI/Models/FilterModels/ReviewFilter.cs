@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
-using Interfaces.IFilterModels;
+using Models.IFilterModels;
 using Utils;
 
 namespace Models.FilterModels
 {
-    public class ReviewFilter : IReviewFilter
+    public class ReviewFilter : BaseFilterModel, IReviewFilter
     {
         public string ReviewComment { get; set; }
         public int Stars { get; set; }
-        public Expression<Func<Review, bool>> GetFilter()
+        public Expression<Func<Entities.Review, bool>> GetFilter()
         {
-            Expression<Func<Review, bool>> filter = x => true;
+            Expression<Func<Entities.Review, bool>> filter = x => true;
+
+            if (this.Id.HasValue)
+                filter = filter.And(x => x.Id == Id);
 
             if (string.IsNullOrEmpty(ReviewComment))
                 filter = filter.And(x => x.ReviewComment == ReviewComment);

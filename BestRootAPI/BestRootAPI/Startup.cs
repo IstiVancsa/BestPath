@@ -2,14 +2,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Repositories;
 
 namespace BestRootAPI
 {
@@ -26,17 +30,26 @@ namespace BestRootAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            var myConnectionString = Configuration["connectionStrings:BestPathDBConnectionString"];
+            services.AddDbContext<BaseDataContext>(options =>
+                options.UseSqlServer(myConnectionString));
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IReviewRepository, ReviewsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, BaseDataContext baseDataContext)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
+            baseDataContext.EnsureSeedDataForContext();
+
             app.UseHttpsRedirection();
+
+            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -44,7 +57,9 @@ namespace BestRootAPI
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

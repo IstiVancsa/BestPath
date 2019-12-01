@@ -5,7 +5,7 @@ using Models;
 
 namespace Interfaces
 {
-    public interface IUserRepository : IGenericRepository<User>
+    public interface IUserRepository : IGenericRepository<Entities.User>
     {
     }
 }
