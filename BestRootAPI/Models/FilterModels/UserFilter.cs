@@ -17,7 +17,7 @@ namespace Models.FilterModels
             if (this.Id.HasValue)
                 filter = filter.And(x => x.Id == Id);
             if (!string.IsNullOrEmpty(this.Username))
-                filter = filter.And(x => x.Username.ToLower() == Username.ToLower());
+                filter = filter.And(x => x.Username.Trim().ToLower().Contains(Username.Trim().ToLower()));
             if (!string.IsNullOrEmpty(this.Password))
                 filter = filter.And(x => x.Password == Password);
             return filter;

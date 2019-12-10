@@ -17,6 +17,13 @@ namespace BestRootAPI.Controllers
     {
         public ReviewController(IReviewRepository entityRepository) : base(entityRepository as ReviewsRepository)
         {
+            GetByFilterSelector = x => new Review
+            {
+                Id = x.Id,
+                ReviewComment = x.ReviewComment,
+                Stars = x.Stars,
+                UserId = x.UserId
+            };
         }
     }
 }

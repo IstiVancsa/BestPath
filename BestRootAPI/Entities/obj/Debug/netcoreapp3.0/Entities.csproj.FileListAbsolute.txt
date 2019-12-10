@@ -13,3 +13,11 @@ C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Entities\obj
 C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Entities\obj\Debug\netcoreapp3.0\Entities.AssemblyInfo.cs
 C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Entities\obj\Debug\netcoreapp3.0\Entities.dll
 C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Entities\obj\Debug\netcoreapp3.0\Entities.pdb
+E:\Fac\DotNetProject\BestPath-master\BestRootAPI\Entities\bin\Debug\netcoreapp3.0\Entities.deps.json
+E:\Fac\DotNetProject\BestPath-master\BestRootAPI\Entities\bin\Debug\netcoreapp3.0\Entities.dll
+E:\Fac\DotNetProject\BestPath-master\BestRootAPI\Entities\bin\Debug\netcoreapp3.0\Entities.pdb
+E:\Fac\DotNetProject\BestPath-master\BestRootAPI\Entities\obj\Debug\netcoreapp3.0\Entities.csprojAssemblyReference.cache
+E:\Fac\DotNetProject\BestPath-master\BestRootAPI\Entities\obj\Debug\netcoreapp3.0\Entities.AssemblyInfoInputs.cache
+E:\Fac\DotNetProject\BestPath-master\BestRootAPI\Entities\obj\Debug\netcoreapp3.0\Entities.AssemblyInfo.cs
+E:\Fac\DotNetProject\BestPath-master\BestRootAPI\Entities\obj\Debug\netcoreapp3.0\Entities.dll
+E:\Fac\DotNetProject\BestPath-master\BestRootAPI\Entities\obj\Debug\netcoreapp3.0\Entities.pdb

@@ -3,6 +3,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using Entities;
 using Interfaces;
+using Microsoft.EntityFrameworkCore;
+
 
 
 namespace Repositories
@@ -18,14 +20,13 @@ namespace Repositories
         }
         public void AddItem(TEntity item)
         {
-            DatabaseContext.DbContext.Set<TEntity>().Add(item);
+            DatabaseContext.Set<TEntity>().Add(item);
             SaveChanges();
         }
 
         public IQueryable<TEntity> GetItems()
         {
-            IQueryable<TEntity> items;
-            items = DatabaseContext.DbContext.Set<TEntity>().Where(s => true)
+            IQueryable<TEntity> items = DatabaseContext.Set<TEntity>().Include(DatabaseContext.GetIncludePaths(typeof(TEntity))).Where(x => true)
                 .OrderBy(x => x.Id);
 
             return items;
@@ -33,20 +34,15 @@ namespace Repositories
 
         public IQueryable<TEntity> GetItems(Expression<Func<TEntity, bool>> predicate)
         {
-            IQueryable<TEntity> items;
-
-            items = DatabaseContext.DbContext.Set<TEntity>().Where(predicate)
+            IQueryable<TEntity> items = DatabaseContext.Set<TEntity>().Include(DatabaseContext.GetIncludePaths(typeof(TEntity))).Where(predicate)
                 .OrderBy(x => x.Id);
-
 
             return items;
         }
 
         public TEntity GetItem(Expression<Func<TEntity, bool>> predicate)
         {
-            TEntity myItem;
-
-            myItem = DatabaseContext.DbContext.Set<TEntity>().Where(predicate)
+            TEntity myItem = DatabaseContext.Set<TEntity>().Include(DatabaseContext.GetIncludePaths(typeof(TEntity))).Where(predicate)
                 .FirstOrDefault();
 
 
@@ -55,25 +51,25 @@ namespace Repositories
 
         public void UpdateItem(TEntity myProduct)
         {
-            DatabaseContext.DbContext.Set<TEntity>().Update(myProduct);
+            DatabaseContext.Set<TEntity>().Update(myProduct);
             SaveChanges();
         }
 
         public void DeleteItem(TEntity entity)
         {
-            DatabaseContext.DbContext.Set<TEntity>().Remove(entity);
+            DatabaseContext.Set<TEntity>().Remove(entity);
             SaveChanges();
         }
 
         public void DeleteItem(Guid id)
         {
-            TEntity myEntity = DatabaseContext.DbContext.Set<TEntity>().FirstOrDefault(x => x.Id == id);
-            if(myEntity != null)
-                DatabaseContext.DbContext.Set<TEntity>().Remove(myEntity);
+            TEntity myEntity = DatabaseContext.Set<TEntity>().FirstOrDefault(x => x.Id == id);
+            if (myEntity != null)
+                DatabaseContext.Set<TEntity>().Remove(myEntity);
             SaveChanges();
         }
 
-        public int SaveChanges() { return DatabaseContext.DbContext.SaveChanges(); }
+        public int SaveChanges() { return DatabaseContext.SaveChanges(); }
 
     }
 }

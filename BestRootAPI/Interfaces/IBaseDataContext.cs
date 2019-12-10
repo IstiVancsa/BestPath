@@ -6,8 +6,6 @@ namespace Interfaces
 {
     public interface IBaseDataContext
     {
-        DbContext DbContext { get; }
-
         DbSet<User> Users { get; set; }
         DbSet<Review> Reviews { get; set; }
     }

@@ -34,7 +34,7 @@ namespace BestRootAPI.Controllers
         [Microsoft.AspNetCore.Mvc.Route("GetDefault")]
         public IActionResult GetDefault()
         {
-            return new JsonResult(GenericRepository.GetItems(q => true).ToList());
+            return new JsonResult(GenericRepository.GetItems(q => true).Select(GetByFilterSelector).ToList());
         }
 
         [Microsoft.AspNetCore.Mvc.HttpGet]

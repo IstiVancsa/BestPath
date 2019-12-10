@@ -1,5 +1,4 @@
 ﻿using Interfaces;
-using Models;
 
 namespace Repositories
 {

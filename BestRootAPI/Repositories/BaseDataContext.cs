@@ -11,7 +11,6 @@ namespace Repositories
 {
     public class BaseDataContext : DbContext, IBaseDataContext
     {
-        public DbContext DbContext { get; }
         public DbSet<User> Users { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public BaseDataContext(DbContextOptions<BaseDataContext> options): base(options)

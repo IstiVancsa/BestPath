@@ -22,11 +22,23 @@ namespace BestRootAPI.Controllers
         {
             "123", "234", "345", "456", "567", "678", "789", "890"
         };
-        private readonly ILogger<User> _logger;
 
-        public UserController(IUserRepository entityRepository, ILogger<User> logger) : base(entityRepository as UserRepository)
+        public UserController(IUserRepository entityRepository) : base(entityRepository as UserRepository)
         {
-            _logger = logger;
+            GetByFilterSelector = x => new User
+            {
+                Id = x.Id,
+                Username = x.Username,
+                Password = x.Password,
+                Token = x.Token,
+                Age = x.Age,
+                Reviews = x.Reviews.Select(y => new Review
+                {
+                    Id = y.Id,
+                    ReviewComment = y.ReviewComment,
+                    Stars = y.Stars
+                }).ToList()
+            };
         }
 
         [HttpGet]
