@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\BestRootAPI\\BestRootAPI.csproj": {}
+    "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\BestRootAPI\\BestRootAPI.csproj": {}
   },
   "projects": {
-    "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\BestRootAPI\\BestRootAPI.csproj": {
+    "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\BestRootAPI\\BestRootAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\BestRootAPI\\BestRootAPI.csproj",
+        "projectUniqueName": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\BestRootAPI\\BestRootAPI.csproj",
         "projectName": "BestRootAPI",
-        "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\BestRootAPI\\BestRootAPI.csproj",
-        "packagesPath": "C:\\Users\\Istvan\\.nuget\\packages\\",
-        "outputPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\BestRootAPI\\obj\\",
+        "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\BestRootAPI\\BestRootAPI.csproj",
+        "packagesPath": "C:\\Users\\stefan.obreja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\BestRootAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Istvan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stefan.obreja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,14 +27,14 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Interfaces\\Interfaces.csproj": {
-                "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Interfaces\\Interfaces.csproj"
+              "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Interfaces\\Interfaces.csproj"
               },
-              "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Models\\Models.csproj": {
-                "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Models\\Models.csproj"
+              "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Models\\Models.csproj"
               },
-              "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Repositories\\Repositories.csproj": {
-                "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Repositories\\Repositories.csproj"
+              "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Repositories\\Repositories.csproj": {
+                "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Repositories\\Repositories.csproj"
               }
             }
           }
@@ -121,6 +118,10 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0-rc4, )"
+            },
             "System.Net.Http": {
               "target": "Package",
               "version": "[4.3.4, )"
@@ -144,24 +145,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj": {
+    "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\Istvan\\.nuget\\packages\\",
-        "outputPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\stefan.obreja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Istvan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stefan.obreja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -199,24 +197,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Interfaces\\Interfaces.csproj": {
+    "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Interfaces\\Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Interfaces\\Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Interfaces\\Interfaces.csproj",
         "projectName": "Interfaces",
-        "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Interfaces\\Interfaces.csproj",
-        "packagesPath": "C:\\Users\\Istvan\\.nuget\\packages\\",
-        "outputPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Interfaces\\obj\\",
+        "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Interfaces\\Interfaces.csproj",
+        "packagesPath": "C:\\Users\\stefan.obreja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Interfaces\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Istvan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stefan.obreja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -229,14 +224,14 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj"
+              "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj"
               },
-              "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Models\\Models.csproj": {
-                "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Models\\Models.csproj"
+              "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Models\\Models.csproj"
               },
-              "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Utils\\Utils.csproj": {
-                "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Utils\\Utils.csproj"
+              "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Utils\\Utils.csproj": {
+                "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Utils\\Utils.csproj"
               }
             }
           }
@@ -282,24 +277,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Models\\Models.csproj": {
+    "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\Istvan\\.nuget\\packages\\",
-        "outputPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Models\\obj\\",
+        "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\stefan.obreja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Models\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Istvan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stefan.obreja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -312,8 +304,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj"
+              "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj"
               }
             }
           }
@@ -359,24 +351,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Repositories\\Repositories.csproj": {
+    "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Repositories\\Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Repositories\\Repositories.csproj",
+        "projectUniqueName": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Repositories\\Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Repositories\\Repositories.csproj",
-        "packagesPath": "C:\\Users\\Istvan\\.nuget\\packages\\",
-        "outputPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Repositories\\obj\\",
+        "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Repositories\\Repositories.csproj",
+        "packagesPath": "C:\\Users\\stefan.obreja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Repositories\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Istvan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stefan.obreja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -389,11 +378,11 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj"
+              "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj"
               },
-              "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Interfaces\\Interfaces.csproj": {
-                "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Interfaces\\Interfaces.csproj"
+              "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Interfaces\\Interfaces.csproj"
               }
             }
           }
@@ -451,24 +440,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Utils\\Utils.csproj": {
+    "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Utils\\Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Utils\\Utils.csproj",
+        "projectUniqueName": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Utils\\Utils.csproj",
         "projectName": "Utils",
-        "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Utils\\Utils.csproj",
-        "packagesPath": "C:\\Users\\Istvan\\.nuget\\packages\\",
-        "outputPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Utils\\obj\\",
+        "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Utils\\Utils.csproj",
+        "packagesPath": "C:\\Users\\stefan.obreja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Utils\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Istvan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stefan.obreja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -481,8 +467,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Models\\Models.csproj": {
-                "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Models\\Models.csproj"
+              "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Models\\Models.csproj"
               }
             }
           }
@@ -528,7 +514,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

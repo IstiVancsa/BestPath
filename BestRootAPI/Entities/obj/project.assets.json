@@ -8,23 +8,19 @@
     ".NETCoreApp,Version=v3.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Istvan\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\stefan.obreja\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Info\\Anul3\\dotNet\\GitProiect\\BestPath\\BestRootAPI\\Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "D:\\Info\\Anul3\\dotNet\\GitProiect\\BestPath\\BestRootAPI\\Entities\\Entities.csproj",
-      "packagesPath": "C:\\Users\\Istvan\\.nuget\\packages\\",
-      "outputPath": "D:\\Info\\Anul3\\dotNet\\GitProiect\\BestPath\\BestRootAPI\\Entities\\obj\\",
+      "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj",
+      "packagesPath": "C:\\Users\\stefan.obreja\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Istvan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\stefan.obreja\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -48,10 +44,21 @@
     "frameworks": {
       "netcoreapp3.0": {
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

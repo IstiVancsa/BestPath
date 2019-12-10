@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj": {}
+    "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj": {
+    "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\Istvan\\.nuget\\packages\\",
-        "outputPath": "D:\\Info\\Anul3\\dotNet\\Proiect\\BestRootAPI\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\stefan.obreja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\stefan.obreja\\Documents\\facultate\\Proiect .NET\\BestRootAPI\\Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Istvan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\stefan.obreja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

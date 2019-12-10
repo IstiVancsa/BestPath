@@ -17,3 +17,22 @@ D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\En
 D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Entities.pdb
 D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Repositories.runtimeconfig.json
 D:\Info\Anul3\dotNet\Proiect\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Repositories.runtimeconfig.dev.json
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Repositories.deps.json
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Repositories.runtimeconfig.json
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Repositories.runtimeconfig.dev.json
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Repositories.dll
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Repositories.pdb
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Entities.dll
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Interfaces.dll
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Models.dll
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Utils.dll
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Entities.pdb
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Interfaces.pdb
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Models.pdb
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\bin\Debug\netcoreapp3.0\Utils.pdb
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\obj\Debug\netcoreapp3.0\Repositories.csprojAssemblyReference.cache
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\obj\Debug\netcoreapp3.0\Repositories.AssemblyInfoInputs.cache
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\obj\Debug\netcoreapp3.0\Repositories.AssemblyInfo.cs
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\obj\Debug\netcoreapp3.0\Repositories.csproj.CopyComplete
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\obj\Debug\netcoreapp3.0\Repositories.dll
+C:\Users\stefan.obreja\Documents\facultate\Proiect .NET\BestRootAPI\Repositories\obj\Debug\netcoreapp3.0\Repositories.pdb
