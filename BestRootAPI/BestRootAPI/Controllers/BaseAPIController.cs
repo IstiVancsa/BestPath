@@ -39,7 +39,7 @@ namespace BestRootAPI.Controllers
 
         [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("GetByFilter")]
-        public IActionResult GetByFilter([Microsoft.AspNetCore.Mvc.FromBody]TFilterModel filter)
+        public IActionResult GetByFilter([Microsoft.AspNetCore.Mvc.FromQuery]TFilterModel filter)
         {
             Expression<Func<TEntity, bool>> predicate = x => true;
             if (filter != null)
