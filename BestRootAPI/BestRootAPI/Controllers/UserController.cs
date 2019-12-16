@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Models;
 using Models.FilterModels;
 using Repositories;
@@ -47,12 +45,32 @@ namespace BestRootAPI.Controllers
         {
             var rng = new Random();
             return new JsonResult(Enumerable.Range(1, 5).Select(index => new User
-                {
-                    Id = new Guid(),
-                    Username = Usernames[rng.Next(Usernames.Length)],
-                    Password = Passwords[rng.Next(Passwords.Length)]
-                })
+            {
+                Id = new Guid(),
+                Username = Usernames[rng.Next(Usernames.Length)],
+                Password = Passwords[rng.Next(Passwords.Length)]
+            })
                 .ToArray());
         }
+        [HttpPost]
+        [Route("AddUser")]
+        public IActionResult AddUser([FromBody] User user)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    this.GenericRepository.AddItem(user.GetEntity() as Entities.User);
+                    return Created(@"https://localhost:44344/user/AddUser", user);
+                }
+                return StatusCode(500);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                return StatusCode(500);
+            }
+        }
+
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web.Http;
@@ -39,7 +38,7 @@ namespace BestRootAPI.Controllers
 
         [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("GetByFilter")]
-        public IActionResult GetByFilter([Microsoft.AspNetCore.Mvc.FromQuery]TFilterModel filter)
+        public IActionResult GetByFilter([FromQuery]TFilterModel filter)
         {
             Expression<Func<TEntity, bool>> predicate = x => true;
             if (filter != null)

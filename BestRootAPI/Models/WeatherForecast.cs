@@ -1,3 +1,4 @@
+using Entities;
 using System;
 using System.Collections.Generic;
 
@@ -12,5 +13,10 @@ namespace Models
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
         public string Summary { get; set; }
+
+        public override BaseEntity GetEntity()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
