@@ -1,2 +1,0 @@
-# BestRoot-
-BestRoot .NET PROJECT
