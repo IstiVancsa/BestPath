@@ -25,5 +25,25 @@ namespace BestRootAPI.Controllers
                 UserId = x.UserId
             };
         }
+
+        [HttpPost]
+        [Route("AddReview")]
+        public IActionResult AddReview([FromBody] Review review)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    this.GenericRepository.AddItem(review.GetEntity() as Entities.Review);
+                    return Created(@"https://localhost:44344/user/AddUser", review);
+                }
+                return StatusCode(500);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                return StatusCode(500);
+            }
+        }
     }
 }

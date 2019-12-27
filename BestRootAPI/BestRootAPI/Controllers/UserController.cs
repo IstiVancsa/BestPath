@@ -72,5 +72,25 @@ namespace BestRootAPI.Controllers
             }
         }
 
+        [HttpPut]
+        [Route("EditUser")]
+        public IActionResult EditUser([FromBody] User user)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    this.GenericRepository.UpdateItem(user.GetEntity() as Entities.User);
+                    return Created(@"https://localhost:44344/user/EditUser", user);
+                }
+                return StatusCode(500);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                return StatusCode(500);
+            }
+        }
+
     }
 }
