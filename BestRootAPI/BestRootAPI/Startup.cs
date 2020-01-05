@@ -30,6 +30,7 @@ namespace BestRootAPI
                 options.UseSqlServer(myConnectionString));
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IReviewRepository, ReviewsRepository>();
+            services.AddScoped<ICityRepository, CitiesRepository>();
             services.AddMvc(option => option.EnableEndpointRouting = false)
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);

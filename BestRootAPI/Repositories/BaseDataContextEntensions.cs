@@ -129,6 +129,7 @@ namespace Repositories
                 ReviewComment = reviews[rng.Next(reviews.Length)],
             });
 
+            //baseDataContext.Cities.Add(new City());
             baseDataContext.Reviews.AddRange(reviewsList);
             baseDataContext.SaveChanges();
         }
