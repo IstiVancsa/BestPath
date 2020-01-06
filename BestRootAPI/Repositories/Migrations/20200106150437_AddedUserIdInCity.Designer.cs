@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repositories;
 
 namespace Repositories.Migrations
 {
     [DbContext(typeof(BaseDataContext))]
-    partial class BaseDataContextModelSnapshot : ModelSnapshot
+    [Migration("20200106150437_AddedUserIdInCity")]
+    partial class AddedUserIdInCity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,40 +21,10 @@ namespace Repositories.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Entities.City", b =>
+            modelBuilder.Entity("Entities.AddCities", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CityName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("DestinationPoint")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("MuseumType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("NeedsHotel")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("NeedsMuseum")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("NeedsRestaurant")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("RestaurantType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("StartPoint")
-                        .HasColumnType("bit");
-
-                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");

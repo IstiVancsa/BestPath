@@ -6,7 +6,7 @@ namespace Repositories
     {
         public ReviewsRepository(BaseDataContext databaseContext) : base(databaseContext)
         {
-            
+
         }
     }
 }

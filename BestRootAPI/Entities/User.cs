@@ -13,7 +13,7 @@ namespace Entities
         [Required]
         [MaxLength(50)]
         public string Password { get; set; }
-        [Required] 
+        [Required]
         public int Age { get; set; }
         public ICollection<Review> Reviews { get; set; } = new List<Review>();
     }

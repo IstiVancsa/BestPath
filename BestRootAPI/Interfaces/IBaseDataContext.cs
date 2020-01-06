@@ -1,6 +1,5 @@
 ﻿using Entities;
 using Microsoft.EntityFrameworkCore;
-using DbContext = Microsoft.EntityFrameworkCore.DbContext;
 
 namespace Interfaces
 {

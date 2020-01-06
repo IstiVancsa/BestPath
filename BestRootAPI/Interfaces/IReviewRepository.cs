@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Models;
-
-namespace Interfaces
+﻿namespace Interfaces
 {
-    public interface IReviewRepository:IGenericRepository<Entities.Review>
+    public interface IReviewRepository : IGenericRepository<Entities.Review>
     {
     }
 }

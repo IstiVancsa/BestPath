@@ -10,7 +10,7 @@ namespace Repositories
         public DbSet<User> Users { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<City> Cities { get; set; }
-        public BaseDataContext(DbContextOptions<BaseDataContext> options): base(options)
+        public BaseDataContext(DbContextOptions<BaseDataContext> options) : base(options)
         {
             Database.Migrate();
         }

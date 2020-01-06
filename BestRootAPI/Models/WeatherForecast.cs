@@ -1,10 +1,9 @@
 using Entities;
 using System;
-using System.Collections.Generic;
 
 namespace Models
 {
-    public class WeatherForecast:BaseModel
+    public class WeatherForecast : BaseModel
     {
         public DateTime Date { get; set; }
 

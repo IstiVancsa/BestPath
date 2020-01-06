@@ -13,5 +13,6 @@ namespace Entities
         public bool NeedsMuseum { get; set; }
         public string MuseumType { get; set; }
         public DateTime Date { get; set; }
+        public Guid UserId { get; set; }
     }
 }
