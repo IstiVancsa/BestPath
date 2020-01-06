@@ -14,5 +14,7 @@ namespace Entities
         public string MuseumType { get; set; }
         public DateTime Date { get; set; }
         public Guid UserId { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
     }
 }
