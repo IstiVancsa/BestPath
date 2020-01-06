@@ -1,9 +1,6 @@
-﻿using Entities;
-using Models.IFilterModels;
+﻿using Models.IFilterModels;
 using System;
-using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
 using Utils;
 
 namespace Models.FilterModels
@@ -18,6 +15,9 @@ namespace Models.FilterModels
         public string RestaurantType { get; set; }
         public bool NeedsMuseum { get; set; }
         public string MuseumType { get; set; }
+        public DateTime Date { get; set; }
+        public Guid UserId { get; set; }
+
         public Expression<Func<Entities.City, bool>> GetFilter()
         {
             Expression<Func<Entities.City, bool>> filter = x => true;

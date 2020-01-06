@@ -1,10 +1,10 @@
-﻿using System;
-using System.Linq;
-using Interfaces;
+﻿using Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using Models.FilterModels;
 using Repositories;
+using System;
+using System.Linq;
 
 namespace BestRootAPI.Controllers
 {

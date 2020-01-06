@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Entities;
+﻿using Entities;
 using Microsoft.EntityFrameworkCore.Internal;
+using System;
+using System.Collections.Generic;
 
 namespace Repositories
 {

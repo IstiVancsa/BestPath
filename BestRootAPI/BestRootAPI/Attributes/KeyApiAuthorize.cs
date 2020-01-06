@@ -1,11 +1,5 @@
 ﻿using Interfaces;
-using Repositories;
-using System;
-using System.Net.Http;
 using System.Web.Http.Controllers;
-using System.Web.Http.Filters;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Models;
 
 namespace BestRootAPI.Attributes
 {

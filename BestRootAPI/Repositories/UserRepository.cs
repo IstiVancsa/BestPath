@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Interfaces;
-using Models;
+﻿using Interfaces;
 
 namespace Repositories
 {
@@ -10,7 +6,7 @@ namespace Repositories
     {
         public UserRepository(BaseDataContext databaseContext) : base(databaseContext)
         {
-            
+
         }
     }
 }

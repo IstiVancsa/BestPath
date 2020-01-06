@@ -1,5 +1,4 @@
-﻿using Entities;
-namespace Models.IFilterModels
+﻿namespace Models.IFilterModels
 {
     public interface ICityFilter : IFilterModel<Entities.City>
     {

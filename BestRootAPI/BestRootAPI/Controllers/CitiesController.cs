@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using Entities;
+﻿using Entities;
 using Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Models.FilterModels;
 using Repositories;
+using System;
+using System.Collections.Generic;
 
 namespace BestRootAPI.Controllers
 {
@@ -20,17 +20,19 @@ namespace BestRootAPI.Controllers
                 CityName = x.CityName,
                 DestinationPoint = x.DestinationPoint,
                 StartPoint = x.StartPoint,
-                NeedsHotel =x.NeedsHotel,
-                NeedsRestaurant=x.NeedsRestaurant,
-                RestaurantType =x.RestaurantType,
-                NeedsMuseum =x.NeedsMuseum,
-                MuseumType = x.MuseumType
+                NeedsHotel = x.NeedsHotel,
+                NeedsRestaurant = x.NeedsRestaurant,
+                RestaurantType = x.RestaurantType,
+                NeedsMuseum = x.NeedsMuseum,
+                MuseumType = x.MuseumType,
+                Date = x.Date,
+                UserId = x.UserId
             };
         }
 
         [HttpPost]
         [Route("AddCities")]
-        public IActionResult AddCities(Guid userId, [FromBody] List<Models.City> cities)
+        public IActionResult AddCities([FromBody] List<Models.City> cities)
         {
             try
             {
@@ -38,7 +40,8 @@ namespace BestRootAPI.Controllers
                 {
                     return StatusCode(500);
                 }
-                foreach (Models.City city in cities){
+                foreach (Models.City city in cities)
+                {
                     City newCity = city.GetEntity() as Entities.City;
                     newCity.Date = DateTime.Now;
                     this.GenericRepository.AddItem(newCity);
@@ -51,6 +54,6 @@ namespace BestRootAPI.Controllers
                 return StatusCode(500);
             }
 
-        } 
+        }
     }
 }

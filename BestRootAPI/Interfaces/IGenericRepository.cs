@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Linq;
 using System.Linq.Expressions;
-using Entities;
 
 namespace Interfaces
 {

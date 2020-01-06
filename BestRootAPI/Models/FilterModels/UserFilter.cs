@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Models.IFilterModels;
+using System;
 using System.Linq.Expressions;
-using Models.IFilterModels;
 using Utils;
 
 namespace Models.FilterModels

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Models.IFilterModels;
+using System;
 using System.Linq.Expressions;
-using System.Text;
-using Models.IFilterModels;
 using Utils;
 
 namespace Models.FilterModels

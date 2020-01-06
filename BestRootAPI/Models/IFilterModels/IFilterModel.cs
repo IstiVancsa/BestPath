@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Linq.Expressions;
-using Entities;
 
 namespace Models.IFilterModels
 {
