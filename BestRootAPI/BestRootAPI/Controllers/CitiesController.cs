@@ -25,8 +25,8 @@ namespace BestRootAPI.Controllers
                 RestaurantType = x.RestaurantType,
                 NeedsMuseum = x.NeedsMuseum,
                 MuseumType = x.MuseumType,
-                Date = x.Date,
-                UserId = x.UserId
+                Latitude = x.Latitude,
+                Longitude = x.Longitude
             };
         }
 

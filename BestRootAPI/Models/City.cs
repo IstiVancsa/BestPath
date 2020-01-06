@@ -13,8 +13,8 @@ namespace Models
         public string RestaurantType { get; set; }
         public bool NeedsMuseum { get; set; }
         public string MuseumType { get; set; }
-        public DateTime Date { get; set; }
-        public Guid UserId { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
 
 
         public override BaseEntity GetEntity()
@@ -30,8 +30,8 @@ namespace Models
                 NeedsRestaurant = this.NeedsRestaurant,
                 RestaurantType = this.RestaurantType,
                 StartPoint = this.StartPoint,
-                Date = this.Date,
-                UserId = this.UserId
+                Latitude = this.Latitude,
+                Longitude = this.Longitude
             };
         }
     }
