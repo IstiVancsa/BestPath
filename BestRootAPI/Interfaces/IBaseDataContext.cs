@@ -8,5 +8,6 @@ namespace Interfaces
     {
         DbSet<User> Users { get; set; }
         DbSet<Review> Reviews { get; set; }
+        DbSet<City> Cities { get; set; }
     }
 }
