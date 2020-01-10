@@ -15,7 +15,7 @@ namespace Models
         public string MuseumType { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
-
+        public Guid UserId { get; set; }
 
         public override BaseEntity GetEntity()
         {
@@ -31,7 +31,8 @@ namespace Models
                 RestaurantType = this.RestaurantType,
                 StartPoint = this.StartPoint,
                 Latitude = this.Latitude,
-                Longitude = this.Longitude
+                Longitude = this.Longitude,
+                UserId = this.UserId
             };
         }
     }

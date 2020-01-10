@@ -26,7 +26,8 @@ namespace BestRootAPI.Controllers
                 NeedsMuseum = x.NeedsMuseum,
                 MuseumType = x.MuseumType,
                 Latitude = x.Latitude,
-                Longitude = x.Longitude
+                Longitude = x.Longitude,
+                UserId = x.UserId
             };
         }
 
@@ -48,7 +49,7 @@ namespace BestRootAPI.Controllers
                 }
                 return Created(@"https://localhost:44344/cities/AddCities", cities);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
                 return StatusCode(500);
