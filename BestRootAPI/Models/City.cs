@@ -17,7 +17,6 @@ namespace Models
         public Guid UserId { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
-        public Guid UserId { get; set; }
 
         public override BaseEntity GetEntity()
         {
