@@ -43,7 +43,7 @@ namespace BestRootAPI.Controllers
                 foreach (Models.City city in cities)
                 {
                     City newCity = city.GetEntity() as Entities.City;
-                    newCity.Date = DateTime.Now;
+                    newCity.Date = DateTime.Now;// DON'T SET VALUE HERE
                     this.GenericRepository.AddItem(newCity);
                 }
                 return Created(@"https://localhost:44344/cities/AddCities", cities);
