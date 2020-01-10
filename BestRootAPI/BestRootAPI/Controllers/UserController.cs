@@ -8,6 +8,7 @@ using System.Linq;
 
 namespace BestRootAPI.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
     public class UserController : BaseApiController<Models.User, Entities.User, UserRepository, UserFilter>
     {

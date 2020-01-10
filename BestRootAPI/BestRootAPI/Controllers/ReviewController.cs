@@ -7,7 +7,7 @@ using System;
 
 namespace BestRootAPI.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ReviewController : BaseApiController<Models.Review, Entities.Review, ReviewsRepository, ReviewFilter>
     {
