@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Models.FilterModels;
 using Repositories;
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 
 namespace BestRootAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CitiesController : BaseApiController<Models.City, Entities.City, Repositories.CitiesRepository, CityFilter>

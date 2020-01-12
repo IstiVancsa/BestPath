@@ -10,7 +10,7 @@ namespace BestRootAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : BaseApiController<Models.User, Entities.User, UserRepository, UserFilter>
+    public class UserController : BaseApiController<Models.UserModel, Entities.User, UserRepository, UserFilter>
     {
 
         private static readonly string[] Usernames = new[]
@@ -24,7 +24,7 @@ namespace BestRootAPI.Controllers
 
         public UserController(IUserRepository entityRepository) : base(entityRepository as UserRepository)
         {
-            GetByFilterSelector = x => new User
+            GetByFilterSelector = x => new UserModel
             {
                 Id = x.Id,
                 Username = x.Username,
@@ -45,7 +45,7 @@ namespace BestRootAPI.Controllers
         public IActionResult Get()
         {
             var rng = new Random();
-            return new JsonResult(Enumerable.Range(1, 5).Select(index => new User
+            return new JsonResult(Enumerable.Range(1, 5).Select(index => new UserModel
             {
                 Id = new Guid(),
                 Username = Usernames[rng.Next(Usernames.Length)],
@@ -55,7 +55,7 @@ namespace BestRootAPI.Controllers
         }
         [HttpPost]
         [Route("AddUser")]
-        public IActionResult AddUser([FromBody] User user)
+        public IActionResult AddUser([FromBody] UserModel user)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace BestRootAPI.Controllers
 
         [HttpPut]
         [Route("EditUser")]
-        public IActionResult EditUser([FromBody] User user)
+        public IActionResult EditUser([FromBody] UserModel user)
         {
             try
             {
