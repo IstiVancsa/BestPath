@@ -2,9 +2,12 @@
 using Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Models.FilterModels;
+using Models.IFilterModels;
 using Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace BestRootAPI.Controllers
 {
@@ -43,8 +46,8 @@ namespace BestRootAPI.Controllers
                 }
                 foreach (Models.City city in cities)
                 {
-                    City newCity = city.GetEntity() as Entities.City;
-                    newCity.Date = DateTime.Now;// DON'T SET VALUE HERE
+                    City newCity = city.GetEntity() as City;
+                    newCity.RequestDate = DateTime.Now;// DON'T SET VALUE HERE
                     this.GenericRepository.AddItem(newCity);
                 }
                 return Created(@"https://localhost:44344/cities/AddCities", cities);
@@ -55,6 +58,22 @@ namespace BestRootAPI.Controllers
                 return StatusCode(500);
             }
 
+        }
+
+        [HttpGet]
+        [Route("GetLastRoute")]
+        public IActionResult GetLastRoute([FromQuery] CityFilter cityFilter)
+        {
+            Expression<Func<City, bool>> predicate = x => true;
+            if (cityFilter != null)
+                predicate = cityFilter.GetFilter();
+
+            var allRoutes = GenericRepository
+                        .GetItems(predicate)
+                        .Select(GetByFilterSelector)
+                        .ToList();
+            var groupedRoutes = allRoutes.GroupBy(x => x.RequestDate).ToList();
+            return new JsonResult(groupedRoutes[groupedRoutes.Count() - 1]);
         }
     }
 }

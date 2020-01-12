@@ -15,7 +15,7 @@ namespace Models.FilterModels
         public string RestaurantType { get; set; }
         public bool NeedsMuseum { get; set; }
         public string MuseumType { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime RequestDate { get; set; }
         public Guid UserId { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
@@ -26,11 +26,17 @@ namespace Models.FilterModels
 
             if (this.Id.HasValue)
                 filter = filter.And(x => x.Id == Id);
+            if (this.UserId != null && this.UserId != Guid.Empty)
+                filter = filter.And(x => x.UserId == UserId);
             //if (!string.IsNullOrEmpty(this.CityName))
             //    filter = filter.And(x => x.CityName.Trim().ToLower().Contains(CityName.Trim().ToLower()));
             //if (!string.IsNullOrEmpty(this.Password))
             //    filter = filter.And(x => x.Password == Password);
             return filter;
+        }
+        public CityFilter()
+        {
+
         }
     }
 }
