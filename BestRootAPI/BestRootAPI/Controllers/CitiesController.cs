@@ -30,6 +30,7 @@ namespace BestRootAPI.Controllers
                 MuseumType = x.MuseumType,
                 Latitude = x.Latitude,
                 Longitude = x.Longitude,
+                RequestDate = x.RequestDate,
                 UserId = x.UserId
             };
         }
@@ -47,12 +48,11 @@ namespace BestRootAPI.Controllers
                 foreach (Models.City city in cities)
                 {
                     City newCity = city.GetEntity() as City;
-                    newCity.RequestDate = DateTime.Now;// DON'T SET VALUE HERE
-                    this.GenericRepository.AddItem(newCity);
+                    GenericRepository.AddItem(newCity);
                 }
                 return Created(@"https://localhost:44344/cities/AddCities", cities);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
                 return StatusCode(500);
