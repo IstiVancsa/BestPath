@@ -37,5 +37,10 @@ namespace Models
                 UserId = this.UserId
             };
         }
+
+        public static implicit operator City(Entities.City v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
