@@ -45,9 +45,11 @@ namespace BestRootAPI.Controllers
                 {
                     return StatusCode(500);
                 }
+                var currentDate = DateTime.Now;
                 foreach (Models.City city in cities)
                 {
                     City newCity = city.GetEntity() as City;
+                    newCity.RequestDate = currentDate;
                     GenericRepository.AddItem(newCity);
                 }
                 return Created(@"https://localhost:44344/cities/AddCities", cities);
