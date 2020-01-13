@@ -28,8 +28,7 @@ namespace BestRootAPI.Controllers
                 RestaurantType = x.RestaurantType,
                 NeedsMuseum = x.NeedsMuseum,
                 MuseumType = x.MuseumType,
-                Latitude = x.Latitude,
-                Longitude = x.Longitude,
+                Location = new Models.LocationDTO { lat = x.Latitude, lng = x.Longitude},
                 RequestDate = x.RequestDate,
                 UserId = x.UserId
             };
@@ -74,7 +73,7 @@ namespace BestRootAPI.Controllers
                         .GetItems(predicate)
                         .Select(GetByFilterSelector)
                         .ToList();
-            var groupedRoutes = allRoutes.GroupBy(x => x.RequestDate).ToList();
+            var groupedRoutes = allRoutes.GroupBy(x => x.RequestDate).OrderBy(x => x.Key).ToList();
             return new JsonResult(groupedRoutes[groupedRoutes.Count() - 1]);
         }
     }
