@@ -13,10 +13,9 @@ namespace Models
         public string RestaurantType { get; set; }
         public bool NeedsMuseum { get; set; }
         public string MuseumType { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime RequestDate { get; set; }
         public Guid UserId { get; set; }
-        public string Latitude { get; set; }
-        public string Longitude { get; set; }
+        public LocationDTO Location { get; set; }
 
         public override BaseEntity GetEntity()
         {
@@ -31,11 +30,15 @@ namespace Models
                 NeedsRestaurant = this.NeedsRestaurant,
                 RestaurantType = this.RestaurantType,
                 StartPoint = this.StartPoint,
-                Latitude = this.Latitude,
-                Longitude = this.Longitude,
-                Date = this.Date,
+                Latitude = this.Location.lat,
+                Longitude = this.Location.lng,
                 UserId = this.UserId
             };
+        }
+
+        public static implicit operator City(Entities.City v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

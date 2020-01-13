@@ -3,9 +3,12 @@ using Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Models.FilterModels;
+using Models.IFilterModels;
 using Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace BestRootAPI.Controllers
 {
@@ -27,8 +30,8 @@ namespace BestRootAPI.Controllers
                 RestaurantType = x.RestaurantType,
                 NeedsMuseum = x.NeedsMuseum,
                 MuseumType = x.MuseumType,
-                Latitude = x.Latitude,
-                Longitude = x.Longitude,
+                Location = new Models.LocationDTO { lat = x.Latitude, lng = x.Longitude},
+                RequestDate = x.RequestDate,
                 UserId = x.UserId
             };
         }
@@ -43,20 +46,37 @@ namespace BestRootAPI.Controllers
                 {
                     return StatusCode(500);
                 }
+                var currentDate = DateTime.Now;
                 foreach (Models.City city in cities)
                 {
-                    City newCity = city.GetEntity() as Entities.City;
-                    newCity.Date = DateTime.Now;// DON'T SET VALUE HERE
-                    this.GenericRepository.AddItem(newCity);
+                    City newCity = city.GetEntity() as City;
+                    newCity.RequestDate = currentDate;
+                    GenericRepository.AddItem(newCity);
                 }
                 return Created(@"https://localhost:44344/cities/AddCities", cities);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
                 return StatusCode(500);
             }
 
+        }
+
+        [HttpGet]
+        [Route("GetLastRoute")]
+        public IActionResult GetLastRoute([FromQuery] CityFilter cityFilter)
+        {
+            Expression<Func<City, bool>> predicate = x => true;
+            if (cityFilter != null)
+                predicate = cityFilter.GetFilter();
+
+            var allRoutes = GenericRepository
+                        .GetItems(predicate)
+                        .Select(GetByFilterSelector)
+                        .ToList();
+            var groupedRoutes = allRoutes.GroupBy(x => x.RequestDate).OrderBy(x => x.Key).ToList();
+            return new JsonResult(groupedRoutes[groupedRoutes.Count() - 1]);
         }
     }
 }

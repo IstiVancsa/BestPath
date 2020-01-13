@@ -19,30 +19,5 @@ namespace Repositories
         {
             Database.Migrate();
         }
-
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<User>()
-        //        .Property(t => t.Id)
-        //        .IsRequired()
-        //        .HasMaxLength(40);
-
-        //    Entities.User user = new Entities.User();
-        //    // Kind of Seed Method
-        //    modelBuilder.Entity<User>().HasData(
-        //        user.CreateSeeds(10));
-
-
-        //    modelBuilder.Entity<Review>()
-        //        .Property(t => t.Id)
-        //        .IsRequired()
-        //        .HasMaxLength(40);
-
-        //    Entities.Review review = new Entities.Review();
-        //    // Kind of Seed Method
-        //    modelBuilder.Entity<Review>().HasData(
-        //        review.CreateSeeds(10));
-        //}
     }
 }
