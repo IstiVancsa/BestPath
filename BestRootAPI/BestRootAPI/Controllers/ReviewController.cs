@@ -1,5 +1,6 @@
 ﻿using Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Models;
 using Models.FilterModels;
 using Repositories;
@@ -11,7 +12,7 @@ namespace BestRootAPI.Controllers
     [ApiController]
     public class ReviewController : BaseApiController<Models.Review, Entities.Review, ReviewsRepository, ReviewFilter>
     {
-        public ReviewController(IReviewRepository entityRepository) : base(entityRepository as ReviewsRepository)
+        public ReviewController(IReviewRepository entityRepository, IConfiguration configuration) : base(entityRepository as ReviewsRepository, configuration)
         {
             GetByFilterSelector = x => new Review
             {
@@ -31,7 +32,7 @@ namespace BestRootAPI.Controllers
                 if (ModelState.IsValid)
                 {
                     this.GenericRepository.AddItem(review.GetEntity() as Entities.Review);
-                    return Created(@"https://localhost:44344/user/AddUser", review);
+                    return Created(APIPath + "review/AddReview", review);
                 }
                 return StatusCode(500);
             }

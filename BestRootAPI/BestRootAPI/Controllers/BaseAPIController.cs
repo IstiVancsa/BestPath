@@ -1,6 +1,7 @@
 ﻿using Entities;
 using Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Models;
 using Models.IFilterModels;
 using System;
@@ -19,14 +20,17 @@ namespace BestRootAPI.Controllers
         where TRepository : class, IGenericRepository<TEntity>
         where TFilterModel : class, IFilterModel<TEntity>
     {
+        public string APIPath => Configuration["APIPaths:BestPathAPI"];
+        public IConfiguration Configuration { get; }
         //public int LoggedUserId => Convert.ToInt32(System.Web.HttpContext.Current.Session["EmployeeId"].ToString()); TODO same goes here
         public Expression<Func<TEntity, TModel>> GetByFilterSelector = null;
 
         public TRepository GenericRepository { get; }
 
-        public BaseApiController(TRepository genericRepository)
+        public BaseApiController(TRepository genericRepository, IConfiguration configuration)
         {
             GenericRepository = genericRepository;
+            Configuration = configuration;
         }
 
         [Microsoft.AspNetCore.Mvc.HttpGet]

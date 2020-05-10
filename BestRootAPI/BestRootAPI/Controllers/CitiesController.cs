@@ -1,6 +1,7 @@
 ﻿using Entities;
 using Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Models.FilterModels;
 using Models.IFilterModels;
 using Repositories;
@@ -15,7 +16,7 @@ namespace BestRootAPI.Controllers
     [ApiController]
     public class CitiesController : BaseApiController<Models.City, Entities.City, Repositories.CitiesRepository, CityFilter>
     {
-        public CitiesController(ICityRepository entityRepository) : base(entityRepository as CitiesRepository)
+        public CitiesController(ICityRepository entityRepository, IConfiguration configuration) : base(entityRepository as CitiesRepository, configuration)
         {
             GetByFilterSelector = x => new Models.City
             {
@@ -51,7 +52,7 @@ namespace BestRootAPI.Controllers
                     newCity.RequestDate = currentDate;
                     GenericRepository.AddItem(newCity);
                 }
-                return Created(@"https://localhost:44344/cities/AddCities", cities);
+                return Created(APIPath + "cities/AddCities", cities);
             }
             catch (Exception)
             {

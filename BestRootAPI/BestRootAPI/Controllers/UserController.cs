@@ -1,5 +1,6 @@
 ﻿using Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Models;
 using Models.FilterModels;
 using Repositories;
@@ -22,7 +23,7 @@ namespace BestRootAPI.Controllers
             "123", "234", "345", "456", "567", "678", "789", "890"
         };
 
-        public UserController(IUserRepository entityRepository) : base(entityRepository as UserRepository)
+        public UserController(IUserRepository entityRepository, IConfiguration configuration) : base(entityRepository as UserRepository, configuration)
         {
             GetByFilterSelector = x => new User
             {
@@ -62,7 +63,7 @@ namespace BestRootAPI.Controllers
                 if (ModelState.IsValid)
                 {
                     this.GenericRepository.AddItem(user.GetEntity() as Entities.User);
-                    return Created(@"https://localhost:44344/user/AddUser", user);
+                    return Created(APIPath + "user/AddUser", user);
                 }
                 return StatusCode(500);
             }
@@ -82,7 +83,7 @@ namespace BestRootAPI.Controllers
                 if (ModelState.IsValid)
                 {
                     this.GenericRepository.UpdateItem(user.GetEntity() as Entities.User);
-                    return Created(@"https://localhost:44344/user/EditUser", user);
+                    return Created(APIPath + "user/EditUser", user);
                 }
                 return StatusCode(500);
             }
