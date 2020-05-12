@@ -9,69 +9,11 @@ namespace Repositories
     {
         public static void EnsureSeedDataForContext(this BaseDataContext baseDataContext)
         {
-            if (baseDataContext.Users.Any())
+            if (baseDataContext.Cities.Any())
             {
                 return;
             }
-
             var rng = new Random();
-            string[] usernames = new[]
-            {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-            };
-            string[] passwords = new[]
-            {
-            "123", "234", "345", "456", "567", "678", "789", "890"
-            };
-
-            var users = new List<User>();
-            users.Add(new User
-            {
-                Id = new Guid("42001e55-c6ec-4b56-8008-0d5930895867"),
-                Username = usernames[rng.Next(usernames.Length)],
-                Password = passwords[rng.Next(passwords.Length)],
-                Token = Guid.NewGuid(),
-                Age = rng.Next(100)
-            });
-
-            users.Add(new User
-            {
-                Id = new Guid("7e665add-6dda-4e36-b813-ecbd534dfffa"),
-                Username = usernames[rng.Next(usernames.Length)],
-                Password = passwords[rng.Next(passwords.Length)],
-                Token = Guid.NewGuid(),
-                Age = rng.Next(100)
-            });
-
-            users.Add(new User
-            {
-                Id = new Guid("b8d4eb47-b8d1-4eb4-8b09-2133226ad4c6"),
-                Username = usernames[rng.Next(usernames.Length)],
-                Password = passwords[rng.Next(passwords.Length)],
-                Token = Guid.NewGuid(),
-                Age = rng.Next(100)
-            });
-
-            users.Add(new User
-            {
-                Id = new Guid("744b602b-e8a7-4083-ac81-6ed65eebb56a"),
-                Username = usernames[rng.Next(usernames.Length)],
-                Password = passwords[rng.Next(passwords.Length)],
-                Token = Guid.NewGuid(),
-                Age = rng.Next(100)
-            });
-
-            users.Add(new User
-            {
-                Id = new Guid("f463cd1e-42b9-412b-b294-5880080e0883"),
-                Username = usernames[rng.Next(usernames.Length)],
-                Password = passwords[rng.Next(passwords.Length)],
-                Token = Guid.NewGuid(),
-                Age = rng.Next(100)
-            });
-
-            baseDataContext.Users.AddRange(users);
-            baseDataContext.SaveChanges();
 
             int[] stars = new[]
            {
@@ -128,7 +70,6 @@ namespace Repositories
                 ReviewComment = reviews[rng.Next(reviews.Length)],
             });
 
-            //baseDataContext.Cities.Add(new City());
             baseDataContext.Reviews.AddRange(reviewsList);
             baseDataContext.SaveChanges();
         }

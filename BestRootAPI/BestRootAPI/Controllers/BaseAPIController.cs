@@ -11,7 +11,6 @@ using System.Web.Http;
 
 namespace BestRootAPI.Controllers
 {
-    //[KeyAPIAuthorize] TODO to be activated when finished to implement KeyApiAuthorize
     [ApiController]
     [Microsoft.AspNetCore.Mvc.Route("[controller]")]
     public class BaseApiController<TModel, TEntity, TRepository, TFilterModel> : ControllerBase

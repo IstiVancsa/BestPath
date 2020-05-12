@@ -14,6 +14,8 @@ using Models;
 using Newtonsoft.Json;
 using Repositories;
 using System.Text;
+using Microsoft.OpenApi.Models;
+using System;
 
 namespace BestRootAPI
 {
@@ -30,10 +32,9 @@ namespace BestRootAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            var myConnectionString = Configuration["connectionStrings:BestPathDBConnectionString"];
 
             services.AddDbContext<BaseDataContext>(options =>
-                options.UseSqlServer(myConnectionString));
+                options.UseSqlServer(Configuration["connectionStrings:BestPathDBConnectionString"]));
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IReviewRepository, ReviewsRepository>();
@@ -51,18 +52,21 @@ namespace BestRootAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
+            services.AddAuthentication(options =>
                 {
-                    options.TokenValidationParameters = new TokenValidationParameters
+                    options.DefaultAuthenticateScheme = "JwtBearer";
+                    options.DefaultChallengeScheme = "JwtBearer";
+                })
+                .AddJwtBearer("JwtBearer", JwtBearerOptions =>
+                {
+                    JwtBearerOptions.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
-                        ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
-                        ValidIssuer = Configuration["JwtIssuer"],
-                        ValidAudience = Configuration["JwtAudience"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtSecurityKey"]))
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtSecurityKey"])),
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        ValidateLifetime = true,
+                        ClockSkew = TimeSpan.FromMinutes(5)
                     };
                 });
         }
