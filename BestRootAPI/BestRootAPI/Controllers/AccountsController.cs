@@ -27,7 +27,7 @@ namespace BestRootAPI.Controllers
             _configuration = configuration;
         }
 
-        [Route("/Register")]
+        [Route("Register")]
         [HttpPost]
         public async Task<IActionResult> Register([FromBody]RegisterModel registerModel)
         {
@@ -45,17 +45,24 @@ namespace BestRootAPI.Controllers
             return Ok(new RegisterResult { Successful = true });
         }
 
-        [Route("/Login")]
+        [Route("Login")]
         [HttpPost]
         public async Task<IActionResult> Login([FromBody]LoginModel loginModel)
         {
-            if(await IsValidUsernameAndPassword(loginModel))
+            var result = new LoginResult();
+            if (await IsValidUsernameAndPassword(loginModel))
             {
-                return new ObjectResult(await GenerateToken(loginModel.Email));
+                result.Successful = true;
+                result.Error = "";
+                result.Token = await GenerateToken(loginModel.Email);
+                return Ok(result);
             }
             else
             {
-                return BadRequest();
+                result.Successful = false;
+                result.Error = "The e-mail or password does not match";
+                result.Token = "";
+                return BadRequest(result);
             }
         }
 
@@ -65,7 +72,7 @@ namespace BestRootAPI.Controllers
             return await _userManager.CheckPasswordAsync(user, registerModel.Password);
         }
 
-        private async Task<dynamic> GenerateToken(string username)
+        private async Task<string> GenerateToken(string username)
         {
             var user = await _userManager.FindByEmailAsync(username);
             var claims = new List<Claim>
@@ -86,13 +93,7 @@ namespace BestRootAPI.Controllers
                 new JwtPayload(claims)
                 );
 
-            return new
-            {
-                Access_Token = new JwtSecurityTokenHandler().WriteToken(token),
-                UserName = username
-            };
-
-
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }
