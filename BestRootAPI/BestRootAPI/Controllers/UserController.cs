@@ -41,19 +41,6 @@ namespace BestRootAPI.Controllers
             };
         }
 
-        [HttpGet]
-        [Route("GetRandomUsers")]
-        public IActionResult Get()
-        {
-            var rng = new Random();
-            return new JsonResult(Enumerable.Range(1, 5).Select(index => new UserModel
-            {
-                Id = new Guid(),
-                Username = Usernames[rng.Next(Usernames.Length)],
-                Password = Passwords[rng.Next(Passwords.Length)]
-            })
-                .ToArray());
-        }
         [HttpPost]
         [Route("AddUser")]
         public IActionResult AddUser([FromBody] UserModel user)
