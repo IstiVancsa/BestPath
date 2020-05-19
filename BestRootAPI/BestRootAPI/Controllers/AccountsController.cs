@@ -55,6 +55,7 @@ namespace BestRootAPI.Controllers
                 result.Successful = true;
                 result.Error = "";
                 result.Token = await GenerateToken(loginModel.Email);
+                result.UserId = (await _userManager.FindByEmailAsync(loginModel.Email)).Id;
                 return Ok(result);
             }
             else
@@ -62,14 +63,15 @@ namespace BestRootAPI.Controllers
                 result.Successful = false;
                 result.Error = "The e-mail or password does not match";
                 result.Token = "";
+                result.UserId = "";
                 return BadRequest(result);
             }
         }
 
-        private async Task<bool> IsValidUsernameAndPassword(LoginModel registerModel)
+        private async Task<bool> IsValidUsernameAndPassword(LoginModel loginModel)
         {
-            var user = await _userManager.FindByEmailAsync(registerModel.Email);
-            return await _userManager.CheckPasswordAsync(user, registerModel.Password);
+            var user = await _userManager.FindByEmailAsync(loginModel.Email);
+            return await _userManager.CheckPasswordAsync(user, loginModel.Password);
         }
 
         private async Task<string> GenerateToken(string username)
