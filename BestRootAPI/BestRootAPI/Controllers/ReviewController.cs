@@ -1,4 +1,5 @@
 ﻿using Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Models;
@@ -12,7 +13,7 @@ namespace BestRootAPI.Controllers
     [ApiController]
     public class ReviewController : BaseApiController<Models.Review, Entities.Review, ReviewsRepository, ReviewFilter>
     {
-        public ReviewController(IReviewRepository entityRepository, IConfiguration configuration) : base(entityRepository as ReviewsRepository, configuration)
+        public ReviewController(IReviewRepository entityRepository, IConfiguration configuration, UserManager<IdentityUser> userManager) : base(entityRepository as ReviewsRepository, configuration, userManager)
         {
             GetByFilterSelector = x => new Review
             {

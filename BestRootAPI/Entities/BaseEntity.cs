@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities
 {
-    public abstract class BaseEntity
+    public class BaseEntity
     {
         [Key]//nu e obligatoriu daca prop se numeste Id sau entityname+Id
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

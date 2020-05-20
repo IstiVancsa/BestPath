@@ -1,8 +1,10 @@
 ﻿using Entities;
 using Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Models.DTO;
 using Models.FilterModels;
 using Models.IFilterModels;
 using Repositories;
@@ -10,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Utils;
 
 namespace BestRootAPI.Controllers
 {
@@ -18,7 +21,7 @@ namespace BestRootAPI.Controllers
     [ApiController]
     public class CitiesController : BaseApiController<Models.City, Entities.City, Repositories.CitiesRepository, CityFilter>
     {
-        public CitiesController(ICityRepository entityRepository, IConfiguration configuration) : base(entityRepository as CitiesRepository, configuration)
+        public CitiesController(ICityRepository entityRepository, IConfiguration configuration, UserManager<IdentityUser> userManager) : base(entityRepository as CitiesRepository, configuration, userManager)
         {
             GetByFilterSelector = x => new Models.City
             {
@@ -54,7 +57,7 @@ namespace BestRootAPI.Controllers
                     newCity.RequestDate = currentDate;
                     GenericRepository.AddItem(newCity);
                 }
-                return Created(APIPath + "cities/AddCities", cities);
+                return Created(APIPath + "cities/AddCities", this.NewToken);
             }
             catch (Exception)
             {
@@ -76,8 +79,9 @@ namespace BestRootAPI.Controllers
                         .GetItems(predicate)
                         .Select(GetByFilterSelector)
                         .ToList();
-            var groupedRoutes = allRoutes.GroupBy(x => x.RequestDate).OrderBy(x => x.Key).ToList();
-            return new JsonResult(groupedRoutes[groupedRoutes.Count() - 1]);
+            GetLastRouteResult result = new GetLastRouteResult { Cities = allRoutes.GroupBy(x => x.RequestDate).OrderBy(x => x.Key).ToList() };
+            result.AddToken(this.HttpContext);
+            return new JsonResult(result);
         }
     }
 }

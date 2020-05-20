@@ -1,7 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Microsoft.EntityFrameworkCore
 {
@@ -48,5 +51,16 @@ namespace Microsoft.EntityFrameworkCore
             }
         }
 
+        public static async void SafeFireAndForget(this Task task, bool returnToCallingContext, Action<Exception> onException = null)
+        {
+            try
+            {
+                await task.ConfigureAwait(returnToCallingContext);
+            }
+            catch (Exception ex) when (onException != null)
+            {
+                onException(ex);
+            }
+        }
     }
 }

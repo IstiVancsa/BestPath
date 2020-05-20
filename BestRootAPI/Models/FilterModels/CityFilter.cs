@@ -5,7 +5,7 @@ using Utils;
 
 namespace Models.FilterModels
 {
-    public class CityFilter : BaseFilterModel, ICityFilter
+    public class CityFilter : BaseFilterModel<Entities.City>, ICityFilter
     {
         public string CityName { get; set; }
         public bool DestinationPoint { get; set; }

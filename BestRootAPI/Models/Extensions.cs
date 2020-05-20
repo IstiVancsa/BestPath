@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using Models.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -31,6 +33,12 @@ namespace Utils
         {
             return first.Compose(second, Expression.Or);
         }
+
+        public static void AddToken(this BaseTokenizedDTO tokenizedDTO, HttpContext httpContext)
+        {
+            tokenizedDTO.Token = httpContext.Session.GetString("Token");
+        }
+
     }
 
     public class ParameterRebinder : ExpressionVisitor

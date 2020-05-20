@@ -5,7 +5,7 @@ using Utils;
 
 namespace Models.FilterModels
 {
-    public class UserFilter : BaseFilterModel, IUserFilter
+    public class UserFilter : BaseFilterModel<Entities.User>, IUserFilter
     {
         public string Username { get; set; }
         public string Password { get; set; }

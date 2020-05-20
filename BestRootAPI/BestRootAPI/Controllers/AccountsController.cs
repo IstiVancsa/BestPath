@@ -64,7 +64,7 @@ namespace BestRootAPI.Controllers
                 result.Error = "The e-mail or password does not match";
                 result.Token = "";
                 result.UserId = "";
-                return BadRequest(result);
+                return Ok(result);
             }
         }
 

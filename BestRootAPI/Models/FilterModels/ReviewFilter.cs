@@ -5,7 +5,7 @@ using Utils;
 
 namespace Models.FilterModels
 {
-    public class ReviewFilter : BaseFilterModel, IReviewFilter
+    public class ReviewFilter : BaseFilterModel<Entities.Review>, IReviewFilter
     {
         public string ReviewComment { get; set; }
         public int? Stars { get; set; }

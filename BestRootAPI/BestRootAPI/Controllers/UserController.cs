@@ -1,4 +1,5 @@
 ﻿using Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Models;
@@ -23,7 +24,7 @@ namespace BestRootAPI.Controllers
             "123", "234", "345", "456", "567", "678", "789", "890"
         };
 
-        public UserController(IUserRepository entityRepository, IConfiguration configuration) : base(entityRepository as UserRepository, configuration)
+        public UserController(IUserRepository entityRepository, IConfiguration configuration, UserManager<IdentityUser> userManager) : base(entityRepository as UserRepository, configuration, userManager)
         {
             GetByFilterSelector = x => new UserModel
             {
