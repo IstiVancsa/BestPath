@@ -68,8 +68,8 @@ namespace BestRootAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetLastRoute")]
-        public IActionResult GetLastRoute([FromQuery] CityFilter cityFilter)
+        [Route("GetRoutes")]
+        public IActionResult GetRoutes([FromQuery] CityFilter cityFilter)
         {
             Expression<Func<City, bool>> predicate = x => true;
             if (cityFilter != null)
