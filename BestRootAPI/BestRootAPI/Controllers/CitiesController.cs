@@ -79,7 +79,13 @@ namespace BestRootAPI.Controllers
                         .GetItems(predicate)
                         .Select(GetByFilterSelector)
                         .ToList();
-            GetLastRouteResult result = new GetLastRouteResult { Cities = allRoutes.GroupBy(x => x.RequestDate).OrderBy(x => x.Key).ToList() };
+            var cities = allRoutes.GroupBy(x => x.RequestDate).OrderByDescending(x => x.Key);
+            var finalCities = new List<Tuple<DateTime, List<Models.City>>>();
+            foreach (var cityGroup in cities)
+            {
+                finalCities.Add(new Tuple<DateTime, List<Models.City>>(cityGroup.Key, cityGroup.ToList()));
+            }
+            GetLastRouteResult result = new GetLastRouteResult { Cities = finalCities };
             result.AddToken(this.HttpContext);
             return new JsonResult(result);
         }
