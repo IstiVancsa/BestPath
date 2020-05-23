@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Models;
+using Models.DTO;
 using Models.IFilterModels;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Utils;
 
 namespace BestRootAPI.Controllers
 {
@@ -33,6 +35,7 @@ namespace BestRootAPI.Controllers
         protected readonly Microsoft.AspNetCore.Identity.UserManager<IdentityUser> _userManager;
         public string APIPath => Configuration["APIPaths:BestPathAPI"];
         public IConfiguration Configuration { get; }
+
         //public int LoggedUserId => Convert.ToInt32(System.Web.HttpContext.Current.Session["EmployeeId"].ToString()); TODO same goes here
         public Expression<Func<TEntity, TModel>> GetByFilterSelector = null;
 
@@ -50,7 +53,12 @@ namespace BestRootAPI.Controllers
         [Microsoft.AspNetCore.Mvc.Route("GetDefault")]
         public IActionResult GetDefault()
         {
-            return new JsonResult(GenericRepository.GetItems(q => true).Select(GetByFilterSelector).ToList());
+            var result = new GetDefaultResult<TModel> 
+            { 
+                Items = GenericRepository.GetItems(q => true).Select(GetByFilterSelector).ToList()
+            };
+            result.AddToken(this.HttpContext);
+            return new JsonResult(result);
         }
 
         [Microsoft.AspNetCore.Mvc.HttpGet]
@@ -61,35 +69,17 @@ namespace BestRootAPI.Controllers
             if (filter != null)
                 predicate = filter.GetFilter();
 
-            return new JsonResult(GenericRepository
+            var result = new GetByFilterResult<TModel>
+            {
+                Items = GenericRepository
                         .GetItems(predicate)
                         .Select(GetByFilterSelector)
-                        .ToList());
-        }
-
-        protected async Task<string> GenerateToken(string username)
-        {
-            var user = await _userManager.FindByEmailAsync(username);
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, username),
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
-                new Claim(JwtRegisteredClaimNames.Nbf, new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds().ToString()),
-                new Claim(JwtRegisteredClaimNames.Exp, new DateTimeOffset(DateTime.Now.AddHours(4)).ToUnixTimeSeconds().ToString()),
+                        .ToList()
             };
+            result.AddToken(this.HttpContext);
 
-            var token = new JwtSecurityToken(
-                new JwtHeader(
-                    new SigningCredentials(
-                        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtSecurityKey"])),
-                        SecurityAlgorithms.HmacSha256
-                        )
-                    ),
-                new JwtPayload(claims)
-                );
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            return new JsonResult(result);
         }
-    }
 
+    }
 }

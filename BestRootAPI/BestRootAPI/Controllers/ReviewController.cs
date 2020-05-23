@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Models;
+using Models.DTO;
 using Models.FilterModels;
 using Repositories;
 using System;
+using Utils;
 
 namespace BestRootAPI.Controllers
 {
@@ -33,7 +35,9 @@ namespace BestRootAPI.Controllers
                 if (ModelState.IsValid)
                 {
                     this.GenericRepository.AddItem(review.GetEntity() as Entities.Review);
-                    return Created(APIPath + "review/AddReview", review);
+                    var result = new BaseTokenizedDTO();
+                    result.AddToken(this.HttpContext);
+                    return Created(APIPath + "review/AddReview", result);
                 }
                 return StatusCode(500);
             }

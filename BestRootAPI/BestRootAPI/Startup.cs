@@ -39,6 +39,7 @@ namespace BestRootAPI
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IReviewRepository, ReviewsRepository>();
             services.AddScoped<ICityRepository, CitiesRepository>();
+            services.AddScoped<ISessionManager, SessionManager>();
 
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<BaseDataContext>();

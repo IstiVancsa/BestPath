@@ -41,8 +41,8 @@ namespace BestRootAPI.Controllers
         }
 
         [HttpPost]
-        [Route("AddCities")]
-        public IActionResult AddCities([FromBody] List<Models.City> cities)
+        [Route("SaveCities")]
+        public IActionResult SaveCities([FromBody] List<Models.City> cities)
         {
             try
             {
@@ -57,7 +57,9 @@ namespace BestRootAPI.Controllers
                     newCity.RequestDate = currentDate;
                     GenericRepository.AddItem(newCity);
                 }
-                return Created(APIPath + "cities/AddCities", this.NewToken);
+                var result = new BaseTokenizedDTO();
+                result.AddToken(this.HttpContext);
+                return Created(APIPath + "cities/SaveCities", result);
             }
             catch (Exception)
             {
