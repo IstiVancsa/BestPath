@@ -16,5 +16,6 @@ namespace Entities
         public Guid UserId { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+        public int CityOrder { get; set; }
     }
 }

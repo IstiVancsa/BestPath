@@ -7,6 +7,6 @@ namespace Models.DTO
 {
     public class GetLastRouteResult : BaseTokenizedDTO
     {
-        public List<Tuple<DateTime, List<City>>> Cities { get; set; }
+        public List<Tuple<DateTime, List<City>>> Routes { get; set; }
     }
 }

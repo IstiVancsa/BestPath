@@ -36,7 +36,8 @@ namespace BestRootAPI.Controllers
                 MuseumType = x.MuseumType,
                 Location = new Models.LocationDTO { lat = x.Latitude, lng = x.Longitude},
                 RequestDate = x.RequestDate,
-                UserId = x.UserId
+                UserId = x.UserId,
+                CityOrder = x.CityOrder
             };
         }
 
@@ -85,9 +86,9 @@ namespace BestRootAPI.Controllers
             var finalCities = new List<Tuple<DateTime, List<Models.City>>>();
             foreach (var cityGroup in cities)
             {
-                finalCities.Add(new Tuple<DateTime, List<Models.City>>(cityGroup.Key, cityGroup.ToList()));
+                finalCities.Add(new Tuple<DateTime, List<Models.City>>(cityGroup.Key, cityGroup.ToList().OrderBy(x => x.CityOrder).ToList()));
             }
-            GetLastRouteResult result = new GetLastRouteResult { Cities = finalCities };
+            GetLastRouteResult result = new GetLastRouteResult { Routes = finalCities };
             result.AddToken(this.HttpContext);
             return new JsonResult(result);
         }
